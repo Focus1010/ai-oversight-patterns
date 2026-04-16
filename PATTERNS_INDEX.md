@@ -44,7 +44,7 @@ Before executing any irreversible action, the agent generates a plain-language s
 A whitelist of permitted action types defined at agent initialization. Any action not on the list is blocked in code, not just in the prompt. The agent can't propose what it's not allowed to do.
 
 **03 — Audit Log Checkpoint**
-Before every action, the agent writes a structured log entry — action type, reason, alternatives considered, confidence level. Append-only. Enables full reconstruction of agent behavior after the fact.
+Before every action, the agent writes a structured log entry, action type, reason, alternatives considered, confidence level. Append-only. Enables full reconstruction of agent behavior after the fact.
 
 ---
 
@@ -75,7 +75,7 @@ Before acting on an instruction, verify whether the instruction source has the a
 After receiving a task, the agent restates its interpretation of the intent back to the user before doing anything. Catches misunderstandings before they become mistakes.
 
 **12 — Output Sanitizer**
-Before agent output reaches users or downstream systems, pass it through a validation layer that checks for known failure modes — hallucinated references, toxic content, PII leakage.
+Before agent output reaches users or downstream systems, pass it through a validation layer that checks for known failure modes, hallucinated references, toxic content, PII leakage.
 
 **13 — Fallback Degradation Path**
 If the agent fails to complete a task or hits a blocking condition, it falls back to a defined safe state or hands off to a human rather than attempting to improvise.
